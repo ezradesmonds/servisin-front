@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "expo-router";
 import homeIcon from "./icon/home.svg";
 import calendarIcon from "./icon/calendar.svg";
 import personIcon from "./icon/person.svg";
@@ -8,6 +9,7 @@ import chatBubbleIcon from "./icon/chat_bubble.svg";
 const navItems = [
   {
     label: "HOME",
+    href: "/home",
     iconSrc: homeIcon,
     iconAlt: "Home",
     containerClassName:
@@ -22,6 +24,7 @@ const navItems = [
   },
   {
     label: "DISCOVER",
+    href: "/discover",
     iconSrc: magnifierIcon,
     iconAlt: "Discover",
     containerClassName:
@@ -35,6 +38,7 @@ const navItems = [
   },
   {
     label: "CHAT",
+    href: "/chat",
     iconSrc: chatBubbleIcon,
     iconAlt: "Chat",
     containerClassName:
@@ -49,6 +53,7 @@ const navItems = [
   },
   {
     label: "BOOKINGS",
+    href: "/bookings",
     iconSrc: calendarIcon,
     iconAlt: "Bookings",
     containerClassName:
@@ -63,6 +68,7 @@ const navItems = [
   },
   {
     label: "PROFILE",
+    href: "/profile",
     iconSrc: personIcon,
     iconAlt: "Profile",
     containerClassName:
@@ -78,6 +84,7 @@ const navItems = [
 ];
 
 export const BottomnavbarHome = (): React.JSX.Element => {
+  const router = useRouter();
   return (
     <nav
       aria-label="Bottom navigation"
@@ -90,6 +97,7 @@ export const BottomnavbarHome = (): React.JSX.Element => {
             type="button"
             aria-label={item.label}
             className={item.containerClassName}
+            onClick={() => router.push(item.href as any)}
           >
             {item.iconWrapperClassName ? (
               <div className={item.iconWrapperClassName}>
