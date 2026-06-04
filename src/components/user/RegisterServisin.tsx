@@ -1,14 +1,14 @@
 import React, { FormEvent, useId, useState } from "react";
 // Assumes you will provide the following assets in the same folder or update imports
-import google from "./google.png";
-import icon from "./icon.svg";
-import icon2 from "./icon-2.svg";
-import icon3 from "./icon-3.svg";
-import icon4 from "./icon-4.svg";
-import icon5 from "./icon-5.svg";
-import icon6 from "./icon-6.svg";
-import icon7 from "./icon-7.svg";
-import image from "./image.svg";
+const google = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBpZD0iZ29vZ2xlIj48cGF0aCBmaWxsPSIjZmJiYjAwIiBkPSJNMTEzLjQ3IDMwOS40MDggOTUuNjQ4IDM3NS45NGwtNjUuMTM5IDEuMzc4QzExLjA0MiAzNDEuMjExIDAgMjk5LjkgMCAyNTZjMC00Mi40NTEgMTAuMzI0LTgyLjQ4MyAyOC42MjQtMTE3LjczMmguMDE0TDg2LjYzIDE0OC45bDI1LjQwNCA1Ny42NDRjLTUuMzE3IDE1LjUwMS04LjIxNSAzMi4xNDEtOC4yMTUgNDkuNDU2LjAwMiAxOC43OTIgMy40MDYgMzYuNzk3IDkuNjUxIDUzLjQwOHoiPjwvcGF0aD48cGF0aCBmaWxsPSIjNTE4ZWY4IiBkPSJNNTA3LjUyNyAyMDguMTc2QzUxMC40NjcgMjIzLjY2MiA1MTIgMjM5LjY1NSA1MTIgMjU2YzAgMTguMzI4LTEuOTI3IDM2LjIwNi01LjU5OCA1My40NTEtMTIuNDYyIDU4LjY4My00NS4wMjUgMTA5LjkyNS05MC4xMzQgMTQ2LjE4N2wtLjAxNC0uMDE0LTczLjA0NC0zLjcyNy0xMC4zMzgtNjQuNTM1YzI5LjkzMi0xNy41NTQgNTMuMzI0LTQ1LjAyNSA2NS42NDYtNzcuOTExaC0xMzYuODlWMjA4LjE3NmgyNDUuODk5eiI+PC9wYXRoPjxwYXRoIGZpbGw9IiMyOGI0NDYiIGQ9Im00MTYuMjUzIDQ1NS42MjQuMDE0LjAxNEMzNzIuMzk2IDQ5MC45MDEgMzE2LjY2NiA1MTIgMjU2IDUxMmMtOTcuNDkxIDAtMTgyLjI1Mi01NC40OTEtMjI1LjQ5MS0xMzQuNjgxbDgyLjk2MS02Ny45MWMyMS42MTkgNTcuNjk4IDc3LjI3OCA5OC43NzEgMTQyLjUzIDk4Ljc3MSAyOC4wNDcgMCA1NC4zMjMtNy41ODIgNzYuODctMjAuODE4bDgzLjM4MyA2OC4yNjJ6Ij48L3BhdGg+PHBhdGggZmlsbD0iI2YxNDMzNiIgZD0ibTQxOS40MDQgNTguOTM2LTgyLjkzMyA2Ny44OTZDMzEzLjEzNiAxMTIuMjQ2IDI4NS41NTIgMTAzLjgyIDI1NiAxMDMuODJjLTY2LjcyOSAwLTEyMy40MjkgNDIuOTU3LTE0My45NjUgMTAyLjcyNGwtODMuMzk3LTY4LjI3NmgtLjAxNEM3MS4yMyA1Ni4xMjMgMTU3LjA2IDAgMjU2IDBjNjIuMTE1IDAgMTE5LjA2OCAyMi4xMjYgMTYzLjQwNCA1OC45MzZ6Ij48L3BhdGg+PC9zdmc+";
+const icon = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPjwvc3ZnPg==";
+const icon2 = icon;
+const icon3 = icon;
+const icon4 = icon;
+const icon5 = icon;
+const icon6 = icon;
+const icon7 = icon;
+const image = icon;
 import logoServisin from "./icon/logo_servisin.png";
 
 type FormState = {
