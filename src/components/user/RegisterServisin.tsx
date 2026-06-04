@@ -27,7 +27,7 @@ const initialFormState: FormState = {
   agree: false,
 };
 
-export const DaftarServisin = (): React.JSX.Element => {
+export const RegisterServisin = (): React.JSX.Element => {
   const fullNameId = useId();
   const emailId = useId();
   const passwordId = useId();
@@ -382,4 +382,4 @@ export const DaftarServisin = (): React.JSX.Element => {
   );
 };
 
-export default DaftarServisin;
+export default RegisterServisin;
