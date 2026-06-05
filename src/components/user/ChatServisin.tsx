@@ -1,8 +1,8 @@
 import React from "react";
 import { View, ScrollView, Text, Image, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { HeaderTop } from "./HeaderTop";
-import { BottomnavbarHome } from "./BottomnavbarHome";
+
+
 
 export const ChatServisin = (props: any) => {
   return (
@@ -22,8 +22,7 @@ export const ChatServisin = (props: any) => {
           position: "relative",
         }}
       >
-        {/* @ts-ignore */}
-        <HeaderTop />
+        
 
         <ScrollView
           style={{
@@ -673,13 +672,11 @@ export const ChatServisin = (props: any) => {
           </View>
         </ScrollView>
 
-        <View style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
-          {/* @ts-ignore */}
-          <BottomnavbarHome />
-        </View>
+        
       </View>
     </SafeAreaView>
   );
 };
 
 export default ChatServisin;
+

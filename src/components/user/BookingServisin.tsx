@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { View, ScrollView, Text, TouchableOpacity, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { HeaderTop } from "./HeaderTop";
-import { BottomnavbarHome } from "./BottomnavbarHome";
+
+
 
 export const BookingServisin = (props: any) => {
   const [activeTab, setActiveTab] = useState<"ongoing" | "completed">("ongoing");
@@ -25,8 +25,7 @@ export const BookingServisin = (props: any) => {
           position: "relative",
         }}
       >
-        {/* @ts-ignore */}
-        <HeaderTop />
+        
 
         <ScrollView
           style={{
@@ -1394,13 +1393,11 @@ export const BookingServisin = (props: any) => {
           )}
         </ScrollView>
 
-        <View style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
-          {/* @ts-ignore */}
-          <BottomnavbarHome />
-        </View>
+        
       </View>
     </SafeAreaView>
   );
 };
 
 export default BookingServisin;
+

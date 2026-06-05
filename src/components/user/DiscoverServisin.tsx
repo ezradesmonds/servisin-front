@@ -1,8 +1,8 @@
 import React from "react";
 import { View, ScrollView, Image, Text, TouchableOpacity, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { HeaderTop } from "./HeaderTop";
-import { BottomnavbarHome } from "./BottomnavbarHome";
+
+
 
 export const DiscoverServisin = (props: any) => {
   return (
@@ -14,8 +14,7 @@ export const DiscoverServisin = (props: any) => {
       }}
     >
       <View style={{ width: 390, flex: 1, backgroundColor: "#FFFFFF", overflow: "hidden", position: "relative" }}>
-        {/* @ts-ignore */}
-        <HeaderTop />
+        
         
         <ScrollView
           style={{
@@ -916,13 +915,11 @@ export const DiscoverServisin = (props: any) => {
           </View>
         </ScrollView>
 
-        <View style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
-          {/* @ts-ignore */}
-          <BottomnavbarHome />
-        </View>
+        
       </View>
     </SafeAreaView>
   );
 };
 
 export default DiscoverServisin;
+

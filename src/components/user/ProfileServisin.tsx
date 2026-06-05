@@ -2,8 +2,8 @@ import React from "react";
 import { View, ScrollView, Image, Text, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { HeaderTop } from "./HeaderTop";
-import { BottomnavbarHome } from "./BottomnavbarHome";
+
+
 
 export const ProfileServisin = (props: any) => {
   return (
@@ -23,8 +23,7 @@ export const ProfileServisin = (props: any) => {
           position: "relative",
         }}
       >
-        {/* @ts-ignore */}
-        <HeaderTop />
+        
 
         <ScrollView
           style={{
@@ -696,13 +695,11 @@ export const ProfileServisin = (props: any) => {
           </LinearGradient>
         </ScrollView>
 
-        <View style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
-          {/* @ts-ignore */}
-          <BottomnavbarHome />
-        </View>
+        
       </View>
     </SafeAreaView>
   );
 };
 
 export default ProfileServisin;
+
