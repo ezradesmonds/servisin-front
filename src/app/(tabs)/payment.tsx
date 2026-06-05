@@ -2,6 +2,7 @@ import React from "react";
 import { View, ScrollView, Image, Text, TouchableOpacity, } from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
 import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from 'expo-router';
 export default (props) => {
 	return (
 		<SafeAreaView 
@@ -225,7 +226,7 @@ export default (props) => {
 							borderRadius: 12,
 							paddingVertical: 19,
 							marginBottom: 16,
-						}} onPress={()=>alert('Pressed!')}>
+						}} onPress={() => router.push('/finish-payment')}>
 						<LinearGradient 
 							start={{x:0, y:0}}
 							end={{x:0, y:1}}

@@ -23,6 +23,7 @@ export default function TabsLayout() {
         <Tabs.Screen name="service-detail" options={{ href: null }} />
         <Tabs.Screen name="confirm-booking" options={{ href: null }} />
         <Tabs.Screen name="payment" options={{ href: null }} />
+        <Tabs.Screen name="finish-payment" options={{ href: null }} />
       </Tabs>
     </View>
   );
