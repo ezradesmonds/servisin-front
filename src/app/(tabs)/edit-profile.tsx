@@ -13,7 +13,7 @@ export default function EditProfile() {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <ScrollView
         style={{ flex: 1, backgroundColor: "#FFFFFF" }}
-        contentContainerStyle={{ paddingHorizontal: 24, paddingTop: 96, paddingBottom: 144, gap: 48 }}
+        contentContainerStyle={{ paddingHorizontal: 24, paddingTop: 24, paddingBottom: 144, gap: 48 }}
       >
         <View style={{ alignItems: "center" }}>
           <View style={{ paddingTop: 24, alignItems: "center" }}>
@@ -210,14 +210,6 @@ export default function EditProfile() {
         </View>
       </ScrollView>
 
-      <View style={{ position: "absolute", top: 0, left: 0, right: 0, backgroundColor: "rgba(255,255,255,0.8)" }}>
-        <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 24, paddingVertical: 16, paddingTop: 48 }}>
-          <TouchableOpacity onPress={() => router.back()} style={{ padding: 8 }}>
-            <SvgIcon size={16} color="#003F87" />
-          </TouchableOpacity>
-          <Text style={{ fontSize: 20, fontWeight: "bold", color: "#1e3a8a", marginLeft: 16 }}>Edit Profile</Text>
-        </View>
-      </View>
     </SafeAreaView>
   );
 }

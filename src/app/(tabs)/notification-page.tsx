@@ -13,7 +13,7 @@ export default function NotificationPage() {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#f9f9ff" }}>
       <ScrollView
         style={{ flex: 1 }}
-        contentContainerStyle={{ paddingHorizontal: 24, paddingTop: 96, paddingBottom: 128, gap: 32 }}
+        contentContainerStyle={{ paddingHorizontal: 24, paddingTop: 24, paddingBottom: 128, gap: 32 }}
       >
         <View style={{ gap: 8 }}>
           <Text style={{ fontSize: 14, fontWeight: "600", textTransform: "uppercase", color: "#003f87" }}>
@@ -144,14 +144,6 @@ export default function NotificationPage() {
         </TouchableOpacity>
       </ScrollView>
 
-      <View style={{ position: "absolute", top: 0, left: 0, right: 0, backgroundColor: "rgba(255,255,255,0.8)" }}>
-        <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 24, paddingVertical: 16, paddingTop: 48 }}>
-          <TouchableOpacity onPress={() => router.back()} style={{ padding: 8 }}>
-            <SvgIcon size={16} color="#003F87" />
-          </TouchableOpacity>
-          <Text style={{ fontSize: 20, fontWeight: "bold", color: "#1e3a8a", marginLeft: 16 }}>Pengaturan Notifikasi</Text>
-        </View>
-      </View>
     </SafeAreaView>
   );
 }

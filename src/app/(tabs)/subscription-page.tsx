@@ -15,7 +15,7 @@ export default function SubscriptionPage() {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#f8fafc" }}>
       <ScrollView
         style={{ flex: 1 }}
-        contentContainerStyle={{ paddingHorizontal: 16, paddingTop: 96, paddingBottom: 128, gap: 32 }}
+        contentContainerStyle={{ paddingHorizontal: 16, paddingTop: 24, paddingBottom: 128, gap: 32 }}
       >
         <View style={{ flexDirection: "row", padding: 4, backgroundColor: "#f2f3fc", borderRadius: 12 }}>
           <TouchableOpacity
@@ -218,15 +218,6 @@ export default function SubscriptionPage() {
         )}
       </ScrollView>
 
-      {/* Header Absolute */}
-      <View style={{ position: "absolute", top: 0, left: 0, right: 0, backgroundColor: "rgba(255,255,255,0.8)" }}>
-        <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 24, paddingVertical: 16, paddingTop: 48 }}>
-          <TouchableOpacity onPress={() => router.back()} style={{ padding: 8 }}>
-            <SvgIcon size={16} color="#003F87" />
-          </TouchableOpacity>
-          <Text style={{ fontSize: 20, fontWeight: "bold", color: "#1e3a8a", marginLeft: 16 }}>Paket Langganan</Text>
-        </View>
-      </View>
     </SafeAreaView>
   );
 }
