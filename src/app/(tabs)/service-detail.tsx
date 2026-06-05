@@ -2,6 +2,7 @@ import React from "react";
 import { View, ScrollView, Image, Text, TouchableOpacity, } from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
 import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from 'expo-router';
 
 export default (props) => {
 	return (
@@ -787,7 +788,7 @@ export default (props) => {
 							},
 							shadowRadius: 6,
 							elevation: 6,
-						}} onPress={()=>alert('Pressed!')}>
+						}} onPress={() => router.push('/confirm-booking')}>
 						<Text 
 							style={{
 								color: "#FFFFFF",
