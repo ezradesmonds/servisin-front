@@ -2,7 +2,7 @@ import React from "react";
 import { View, ScrollView, Image, Text, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { router } from "expo-router";
 
 
 export const ProfileServisin = (props: any) => {
@@ -109,7 +109,7 @@ export const ProfileServisin = (props: any) => {
                 shadowRadius: 4,
                 elevation: 2,
               }}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.push("/edit-profile")}
             >
               <Image
                 source={{
@@ -261,7 +261,7 @@ export const ProfileServisin = (props: any) => {
                 shadowRadius: 4,
                 elevation: 2,
               }}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.push("/subscription-page")}
             >
               <Image
                 source={{
@@ -337,7 +337,7 @@ export const ProfileServisin = (props: any) => {
                 shadowRadius: 4,
                 elevation: 2,
               }}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.push("/notification-page")}
             >
               <Image
                 source={{
@@ -412,7 +412,7 @@ export const ProfileServisin = (props: any) => {
                 shadowRadius: 4,
                 elevation: 2,
               }}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.push("/referral-program")}
             >
               <Image
                 source={{

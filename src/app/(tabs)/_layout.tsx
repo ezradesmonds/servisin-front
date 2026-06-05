@@ -26,6 +26,9 @@ export default function TabsLayout() {
         <Tabs.Screen name="finish-payment" options={{ href: null }} />
         <Tabs.Screen name="transaction-detail" options={{ href: null }} />
         <Tabs.Screen name="notification-page" options={{ href: null }} />
+        <Tabs.Screen name="edit-profile" options={{ href: null }} />
+        <Tabs.Screen name="subscription-page" options={{ href: null }} />
+        <Tabs.Screen name="referral-program" options={{ href: null }} />
       </Tabs>
     </View>
   );
