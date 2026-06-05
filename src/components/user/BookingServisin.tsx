@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, ScrollView, Text, TouchableOpacity, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { router } from 'expo-router';
 
 
 export const BookingServisin = (props: any) => {
@@ -1067,7 +1067,7 @@ export const BookingServisin = (props: any) => {
                       paddingVertical: 14,
                       marginRight: 12,
                     }}
-                    onPress={() => alert("Pressed!")}
+                    onPress={() => router.push('/transaction-detail')}
                   >
                     <Text
                       style={{

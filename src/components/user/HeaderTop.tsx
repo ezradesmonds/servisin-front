@@ -27,7 +27,7 @@ export const HeaderTop = (): React.JSX.Element => {
           </Text>
         </View>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 16 }}>
-          <TouchableOpacity style={{ padding: 8, borderRadius: 9999 }}>
+          <TouchableOpacity style={{ padding: 8, borderRadius: 9999 }} onPress={() => router.push('/notification-page')}>
             <Image
               style={{ width: 20, height: 24 }}
               source={icon}
