@@ -1,6 +1,7 @@
 import React from "react";
 import { View, ScrollView, Image, Text, TouchableOpacity, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from 'expo-router';
 
 
 
@@ -410,7 +411,7 @@ export const DiscoverServisin = (props: any) => {
             >
               {"Pilihan Servisin"}
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => router.push('/all-services')}>
               <Text
                 style={{
                   color: "#003F87",
