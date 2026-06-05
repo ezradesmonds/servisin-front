@@ -1,6 +1,7 @@
 import React from "react";
 import { View, ScrollView, Image, Text, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from 'expo-router';
 
 export default (props) => {
 	return (
@@ -717,7 +718,7 @@ export default (props) => {
 						shadowRadius: 40,
 						elevation: 40,
 					}}>
-					<View 
+					<TouchableOpacity 
 						style={{
 							flexDirection: "row",
 							justifyContent: "flex-end",
@@ -734,7 +735,7 @@ export default (props) => {
 							},
 							shadowRadius: 6,
 							elevation: 6,
-						}}>
+						}} onPress={() => router.push('/payment')}>
 						<Text 
 							style={{
 								color: "#FFFFFF",
@@ -754,7 +755,7 @@ export default (props) => {
 								marginRight: 86,
 							}}
 						/>
-					</View>
+					</TouchableOpacity>
 					<View 
 						style={{
 							alignItems: "center",
