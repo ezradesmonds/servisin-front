@@ -1,15 +1,22 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
+import { useRouter } from "expo-router";
 import icon from "./icon/notification.svg";
 import logoServisin from "./logo-servisin.svg";
 import profil2 from "./profil-2.svg";
 
 export const HeaderTop = (): React.JSX.Element => {
+  const router = useRouter();
   return (
     <View style={{ width: '100%', backgroundColor: '#f8fafccc', paddingTop: 8 }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 24, paddingVertical: 16, width: '100%' }}>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+          {router.canGoBack() && (
+            <TouchableOpacity onPress={() => router.back()} style={{ marginRight: 4 }}>
+              <Text style={{ fontSize: 24, color: '#1e3a8a', fontWeight: 'bold' }}>{"←"}</Text>
+            </TouchableOpacity>
+          )}
           <Image
             style={{ width: 42, height: 42, borderRadius: 8 }}
             source={logoServisin}

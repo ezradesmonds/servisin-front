@@ -20,6 +20,7 @@ export default function TabsLayout() {
         <Tabs.Screen name="bookings" />
         <Tabs.Screen name="profile" />
         <Tabs.Screen name="all-services" options={{ href: null }} />
+        <Tabs.Screen name="service-detail" options={{ href: null }} />
       </Tabs>
     </View>
   );

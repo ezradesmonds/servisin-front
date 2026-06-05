@@ -2,6 +2,7 @@ import React from "react";
 import { View, ScrollView, Text, Image, ImageBackground, TouchableOpacity, } from "react-native";
 import {LinearGradient} from 'expo-linear-gradient';
 import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from 'expo-router';
 
 export default (props) => {
 	return (
@@ -491,7 +492,7 @@ export default (props) => {
 							</View>
 						</View>
 					</View>
-					<View 
+					<TouchableOpacity 
 						style={{
 							backgroundColor: "#FFFFFF",
 							borderColor: "#00000000",
@@ -507,7 +508,7 @@ export default (props) => {
 							},
 							shadowRadius: 64,
 							elevation: 64,
-						}}>
+						}} onPress={() => router.push('/service-detail')}>
 						<ImageBackground 
 							source={{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/0q5z4t32_expires_30_days.png"}} 
 							resizeMode = {'stretch'}
@@ -729,7 +730,7 @@ export default (props) => {
 								/>
 							</View>
 						</View>
-					</View>
+					</TouchableOpacity>
 					<View 
 						style={{
 							backgroundColor: "#FFFFFF",
