@@ -30,7 +30,7 @@
         {
           "backgroundColor": "#208AEF",
           "android": {
-            "image": "./assets/images/splash-icon.png",
+            "image": "./src/components/user/icon/logo_servisin.png",
             "imageWidth": 76
           }
         }
