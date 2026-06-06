@@ -5,10 +5,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from 'expo-router';
 export default (props) => {
 	return (
-		<SafeAreaView 
+		<View 
 			style={{
 				flex: 1,
-				backgroundColor: "#FFFFFF",
+				backgroundColor: "#F8FAFC",
 			}}>
 			<ScrollView  
 				style={{
@@ -16,65 +16,7 @@ export default (props) => {
 					backgroundColor: "#F9F9FF",
 					paddingBottom: 127,
 				}}>
-				<View 
-					style={{
-						flexDirection: "row",
-						alignItems: "center",
-						backgroundColor: "#FFFFFFCC",
-						paddingVertical: 18,
-						paddingHorizontal: 16,
-						marginBottom: 32,
-					}}>
-					<View 
-						style={{
-							flexDirection: "row",
-							alignItems: "center",
-						}}>
-						<Image
-							source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/4fm3cz02_expires_30_days.png"}} 
-							resizeMode = {"stretch"}
-							style={{
-								width: 16,
-								height: 16,
-								marginRight: 16,
-							}}
-						/>
-						<View 
-							style={{
-								alignItems: "center",
-								paddingVertical: 7,
-							}}>
-							<Text 
-								style={{
-									color: "#003F87",
-									fontSize: 18,
-									fontWeight: "bold",
-								}}>
-								{"Checkout"}
-							</Text>
-						</View>
-					</View>
-					<View 
-						style={{
-							flex: 1,
-							alignItems: "flex-end",
-						}}>
-						<View 
-							style={{
-								alignItems: "center",
-								paddingVertical: 6,
-							}}>
-							<Text 
-								style={{
-									color: "#003F87",
-									fontSize: 20,
-									fontWeight: "bold",
-								}}>
-								{"Servisin"}
-							</Text>
-						</View>
-					</View>
-				</View>
+
 				<View 
 					style={{
 						backgroundColor: "#003F870D",
@@ -220,11 +162,7 @@ export default (props) => {
 					}}>
 					<TouchableOpacity 
 						style={{
-							flexDirection: "row",
-							justifyContent: "center",
-							alignItems: "center",
 							borderRadius: 12,
-							paddingVertical: 19,
 							marginBottom: 16,
 						}} onPress={() => router.push('/finish-payment')}>
 						<LinearGradient 
@@ -237,7 +175,6 @@ export default (props) => {
 								alignItems: "center",
 								borderRadius: 12,
 								paddingVertical: 19,
-								marginBottom: 16,
 							}}>
 							<Text 
 								style={{
@@ -305,6 +242,6 @@ export default (props) => {
 					</View>
 				</View>
 			</ScrollView>
-		</SafeAreaView>
+		</View>
 	)
 }

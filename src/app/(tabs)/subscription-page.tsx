@@ -12,7 +12,7 @@ export default function SubscriptionPage() {
   const [activeTab, setActiveTab] = useState("Telusuri");
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#f8fafc" }}>
+    <View style={{ flex: 1, backgroundColor: "#f8fafc" }}>
       <ScrollView
         style={{ flex: 1 }}
         contentContainerStyle={{ paddingHorizontal: 16, paddingTop: 24, paddingBottom: 128, gap: 32 }}
@@ -218,6 +218,6 @@ export default function SubscriptionPage() {
         )}
       </ScrollView>
 
-    </SafeAreaView>
+    </View>
   );
 }

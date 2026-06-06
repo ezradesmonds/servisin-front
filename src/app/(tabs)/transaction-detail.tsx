@@ -11,7 +11,7 @@ const DummyIcon = ({ size = 24, color = "#CCC" }) => (
 
 export default function TransactionDetail() {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+    <View style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <ScrollView
         style={{ flex: 1, backgroundColor: "#FFFFFF" }}
         contentContainerStyle={{ paddingHorizontal: 24, paddingTop: 40, paddingBottom: 40, gap: 32 }}
@@ -382,6 +382,6 @@ export default function TransactionDetail() {
         </View>
         <View style={{ height: 40 }} />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
