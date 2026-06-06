@@ -3,7 +3,7 @@ import { View, ScrollView, TouchableOpacity, Image, Text, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 export default (props) => {
 	return (
-		<SafeAreaView 
+		<View 
 			style={{
 				flex: 1,
 				backgroundColor: "#FFFFFF",
@@ -12,7 +12,7 @@ export default (props) => {
 				style={{
 					flex: 1,
 					backgroundColor: "#F9F9FF",
-					paddingVertical: 47,
+					paddingVertical: 24,
 					paddingHorizontal: 16,
 				}}>
 				<View >
@@ -443,14 +443,15 @@ export default (props) => {
 						</View>
 					</View>
 					<View >
-						<View 
+						<TouchableOpacity 
+							onPress={() => router.push('/bookings')}
 							style={{
 								flexDirection: "row",
 								justifyContent: "center",
 								alignItems: "center",
-								backgroundColor: "#FFFFFF00",
+								backgroundColor: "#1E3A8A",
 								borderRadius: 12,
-								paddingVertical: 9,
+								paddingVertical: 14,
 								marginBottom: 16,
 								shadowColor: "#003F8733",
 								shadowOpacity: 0.2,
@@ -485,8 +486,9 @@ export default (props) => {
 									height: 16,
 								}}
 							/>
-						</View>
-						<View 
+						</TouchableOpacity>
+						<TouchableOpacity 
+							onPress={() => router.push('/home')}
 							style={{
 								flexDirection: "row",
 								justifyContent: "center",
@@ -519,10 +521,10 @@ export default (props) => {
 									{"Back to Home"}
 								</Text>
 							</View>
-						</View>
+						</TouchableOpacity>
 					</View>
 				</View>
 			</ScrollView>
-		</SafeAreaView>
+		</View>
 	)
 }

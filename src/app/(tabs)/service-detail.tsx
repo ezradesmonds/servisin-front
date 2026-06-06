@@ -6,7 +6,7 @@ import { router } from 'expo-router';
 
 export default (props) => {
 	return (
-		<SafeAreaView 
+		<View 
 			style={{
 				flex: 1,
 				backgroundColor: "#FFFFFF",
@@ -16,77 +16,7 @@ export default (props) => {
 					flex: 1,
 					backgroundColor: "#FFFFFF",
 				}}>
-				<View 
-					style={{
-						flexDirection: "row",
-						justifyContent: "space-between",
-						alignItems: "center",
-						backgroundColor: "#F8FAFCCC",
-						paddingVertical: 16,
-						paddingHorizontal: 24,
-						marginBottom: 24,
-						shadowColor: "#0000000D",
-						shadowOpacity: 0.1,
-						shadowOffset: {
-						    width: 0,
-						    height: 1
-						},
-						shadowRadius: 2,
-						elevation: 2,
-					}}>
-					<View 
-						style={{
-							flexDirection: "row",
-							alignItems: "center",
-						}}>
-						<Image
-							source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/wcoq62k5_expires_30_days.png"}} 
-							resizeMode = {"stretch"}
-							style={{
-								width: 40,
-								height: 40,
-								marginRight: 16,
-							}}
-						/>
-						<View 
-							style={{
-								alignItems: "center",
-								paddingVertical: 6,
-							}}>
-							<Text 
-								style={{
-									color: "#1E3A8A",
-									fontSize: 20,
-									fontWeight: "bold",
-								}}>
-								{"Servisin"}
-							</Text>
-						</View>
-					</View>
-					<View 
-						style={{
-							flexDirection: "row",
-							alignItems: "center",
-						}}>
-						<Image
-							source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/h6zjjh1o_expires_30_days.png"}} 
-							resizeMode = {"stretch"}
-							style={{
-								width: 40,
-								height: 40,
-								marginRight: 12,
-							}}
-						/>
-						<Image
-							source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/5jq2cu9c_expires_30_days.png"}} 
-							resizeMode = {"stretch"}
-							style={{
-								width: 40,
-								height: 40,
-							}}
-						/>
-					</View>
-				</View>
+
 				<LinearGradient 
 					start={{x:0, y:0}}
 					end={{x:0, y:1}}
@@ -428,11 +358,11 @@ export default (props) => {
 							{"Portfolio"}
 						</Text>
 					</View>
-					<View 
+					<TouchableOpacity 
 						style={{
 							alignItems: "center",
 							paddingVertical: 7,
-						}}>
+						}} onPress={() => router.push('/portofolio')}>
 						<Text 
 							style={{
 								color: "#003F87",
@@ -441,7 +371,7 @@ export default (props) => {
 							}}>
 							{"See All"}
 						</Text>
-					</View>
+					</TouchableOpacity>
 				</View>
 				<ScrollView 
 					horizontal
@@ -454,7 +384,7 @@ export default (props) => {
 						style={{
 							alignItems: "center",
 							marginLeft: 16,
-							marginRight: -374,
+							marginRight: 16,
 						}}>
 						<Image
 							source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/1r4yyo52_expires_30_days.png"}} 
@@ -535,11 +465,11 @@ export default (props) => {
 								{"Recent Reviews"}
 							</Text>
 						</View>
-						<View 
+						<TouchableOpacity 
 							style={{
 								alignItems: "center",
 								paddingVertical: 6,
-							}}>
+							}} onPress={() => router.push('/review')}>
 							<Text 
 								style={{
 									color: "#003F87",
@@ -548,7 +478,7 @@ export default (props) => {
 								}}>
 								{"View All (124)"}
 							</Text>
-						</View>
+						</TouchableOpacity>
 					</View>
 					<View 
 						style={{
@@ -777,7 +707,7 @@ export default (props) => {
 						style={{
 							flex: 1,
 							alignItems: "center",
-							backgroundColor: "#FFFFFF00",
+							backgroundColor: "#1E3A8A",
 							borderRadius: 16,
 							paddingVertical: 23,
 							shadowColor: "#0000001A",
@@ -800,6 +730,6 @@ export default (props) => {
 					</TouchableOpacity>
 				</View>
 			</ScrollView>
-		</SafeAreaView>
+		</View>
 	)
 }

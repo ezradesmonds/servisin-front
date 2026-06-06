@@ -6,7 +6,7 @@ import { router } from 'expo-router';
 
 export default (props) => {
 	return (
-		<SafeAreaView 
+		<View 
 			style={{
 				flex: 1,
 				backgroundColor: "#FFFFFF",
@@ -14,88 +14,9 @@ export default (props) => {
 			<ScrollView  
 				style={{
 					flex: 1,
-					paddingTop: 96,
+					paddingTop: 0,
 				}}>
-				<View 
-					style={{
-						marginBottom: 24,
-						marginHorizontal: 24,
-					}}>
-					<View 
-						style={{
-							paddingTop: 4,
-						}}>
-						<Text 
-							style={{
-								color: "#865300",
-								fontSize: 12,
-								fontWeight: "bold",
-								marginBottom: 10,
-							}}>
-							{"Premium Services"}
-						</Text>
-						<View 
-							style={{
-								marginBottom: 8,
-							}}>
-							<Text 
-								style={{
-									color: "#003F87",
-									fontSize: 36,
-									fontWeight: "bold",
-								}}>
-								{"AC Repair"}
-							</Text>
-						</View>
-						<View 
-							style={{
-								paddingTop: 7,
-								paddingRight: 25,
-							}}>
-							<Text 
-								style={{
-									color: "#424752",
-									fontSize: 18,
-								}}>
-								{"Expert climate control restoration by\ncertified technicians. Restoring your\ncomfort with precision and efficiency."}
-							</Text>
-						</View>
-					</View>
-					<View 
-						style={{
-							flexDirection: "row",
-							alignItems: "center",
-							backgroundColor: "#0067331A",
-							borderRadius: 12,
-							paddingVertical: 8,
-						}}>
-						<Image
-							source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/ps8em69r_expires_30_days.png"}} 
-							resizeMode = {"stretch"}
-							style={{
-								borderRadius: 12,
-								width: 22,
-								height: 21,
-								marginLeft: 16,
-								marginRight: 8,
-							}}
-						/>
-						<View 
-							style={{
-								alignItems: "center",
-								paddingVertical: 3,
-							}}>
-							<Text 
-								style={{
-									color: "#004C24",
-									fontSize: 14,
-									fontWeight: "bold",
-								}}>
-								{"42 Verified Specialists"}
-							</Text>
-						</View>
-					</View>
-				</View>
+				<View style={{ paddingTop: 24 }} />
 				<View 
 					style={{
 						backgroundColor: "#FFFFFF00",
@@ -1277,6 +1198,6 @@ export default (props) => {
 					</View>
 				</View>
 			</ScrollView>
-		</SafeAreaView>
+		</View>
 	)
 }

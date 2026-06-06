@@ -1,60 +1,20 @@
 import React from "react";
 import { View, ScrollView, Image, Text, TouchableOpacity, } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from 'expo-router';
 
 export default (props) => {
 	return (
-		<SafeAreaView 
+		<View 
 			style={{
 				flex: 1,
-				backgroundColor: "#FFFFFF",
+				backgroundColor: "#F8FAFC",
 			}}>
 			<ScrollView  
 				style={{
 					flex: 1,
 					backgroundColor: "#F9F9FF",
 				}}>
-				<View 
-					style={{
-						flexDirection: "row",
-						alignItems: "center",
-						backgroundColor: "#F8FAFCCC",
-						paddingVertical: 26,
-						paddingLeft: 24,
-						shadowColor: "#1E3A8A0D",
-						shadowOpacity: 0.1,
-						shadowOffset: {
-						    width: 0,
-						    height: 1
-						},
-						shadowRadius: 2,
-						elevation: 2,
-					}}>
-					<Image
-						source = {{uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/vqik4jg2_expires_30_days.png"}} 
-						resizeMode = {"stretch"}
-						style={{
-							width: 16,
-							height: 16,
-							marginRight: 16,
-						}}
-					/>
-					<View 
-						style={{
-							alignItems: "center",
-							paddingVertical: 5,
-						}}>
-						<Text 
-							style={{
-								color: "#1E3A8A",
-								fontSize: 18,
-								fontWeight: "bold",
-							}}>
-							{"Confirm Booking"}
-						</Text>
-					</View>
-				</View>
+
 				<View 
 					style={{
 						flexDirection: "row",
@@ -723,7 +683,7 @@ export default (props) => {
 							flexDirection: "row",
 							justifyContent: "flex-end",
 							alignItems: "center",
-							backgroundColor: "#FFFFFF00",
+							backgroundColor: "#1E3A8A",
 							borderRadius: 24,
 							paddingVertical: 20,
 							marginBottom: 12,
@@ -772,6 +732,6 @@ export default (props) => {
 					</View>
 				</View>
 			</ScrollView>
-		</SafeAreaView>
+		</View>
 	)
 }

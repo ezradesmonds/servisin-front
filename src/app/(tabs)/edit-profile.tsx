@@ -10,7 +10,7 @@ const SvgIcon = ({ size = 20, color = "#000" }) => (
 
 export default function EditProfile() {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+    <View style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <ScrollView
         style={{ flex: 1, backgroundColor: "#FFFFFF" }}
         contentContainerStyle={{ paddingHorizontal: 24, paddingTop: 24, paddingBottom: 144, gap: 48 }}
@@ -210,6 +210,6 @@ export default function EditProfile() {
         </View>
       </ScrollView>
 
-    </SafeAreaView>
+    </View>
   );
 }
