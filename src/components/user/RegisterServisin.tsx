@@ -1,385 +1,103 @@
-import React, { FormEvent, useId, useState } from "react";
-// Assumes you will provide the following assets in the same folder or update imports
-const google = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBpZD0iZ29vZ2xlIj48cGF0aCBmaWxsPSIjZmJiYjAwIiBkPSJNMTEzLjQ3IDMwOS40MDggOTUuNjQ4IDM3NS45NGwtNjUuMTM5IDEuMzc4QzExLjA0MiAzNDEuMjExIDAgMjk5LjkgMCAyNTZjMC00Mi40NTEgMTAuMzI0LTgyLjQ4MyAyOC42MjQtMTE3LjczMmguMDE0TDg2LjYzIDE0OC45bDI1LjQwNCA1Ny42NDRjLTUuMzE3IDE1LjUwMS04LjIxNSAzMi4xNDEtOC4yMTUgNDkuNDU2LjAwMiAxOC43OTIgMy40MDYgMzYuNzk3IDkuNjUxIDUzLjQwOHoiPjwvcGF0aD48cGF0aCBmaWxsPSIjNTE4ZWY4IiBkPSJNNTA3LjUyNyAyMDguMTc2QzUxMC40NjcgMjIzLjY2MiA1MTIgMjM5LjY1NSA1MTIgMjU2YzAgMTguMzI4LTEuOTI3IDM2LjIwNi01LjU5OCA1My40NTEtMTIuNDYyIDU4LjY4My00NS4wMjUgMTA5LjkyNS05MC4xMzQgMTQ2LjE4N2wtLjAxNC0uMDE0LTczLjA0NC0zLjcyNy0xMC4zMzgtNjQuNTM1YzI5LjkzMi0xNy41NTQgNTMuMzI0LTQ1LjAyNSA2NS42NDYtNzcuOTExaC0xMzYuODlWMjA4LjE3NmgyNDUuODk5eiI+PC9wYXRoPjxwYXRoIGZpbGw9IiMyOGI0NDYiIGQ9Im00MTYuMjUzIDQ1NS42MjQuMDE0LjAxNEMzNzIuMzk2IDQ5MC45MDEgMzE2LjY2NiA1MTIgMjU2IDUxMmMtOTcuNDkxIDAtMTgyLjI1Mi01NC40OTEtMjI1LjQ5MS0xMzQuNjgxbDgyLjk2MS02Ny45MWMyMS42MTkgNTcuNjk4IDc3LjI3OCA5OC43NzEgMTQyLjUzIDk4Ljc3MSAyOC4wNDcgMCA1NC4zMjMtNy41ODIgNzYuODctMjAuODE4bDgzLjM4MyA2OC4yNjJ6Ij48L3BhdGg+PHBhdGggZmlsbD0iI2YxNDMzNiIgZD0ibTQxOS40MDQgNTguOTM2LTgyLjkzMyA2Ny44OTZDMzEzLjEzNiAxMTIuMjQ2IDI4NS41NTIgMTAzLjgyIDI1NiAxMDMuODJjLTY2LjcyOSAwLTEyMy40MjkgNDIuOTU3LTE0My45NjUgMTAyLjcyNGwtODMuMzk3LTY4LjI3NmgtLjAxNEM3MS4yMyA1Ni4xMjMgMTU3LjA2IDAgMjU2IDBjNjIuMTE1IDAgMTE5LjA2OCAyMi4xMjYgMTYzLjQwNCA1OC45MzZ6Ij48L3BhdGg+PC9zdmc+";
-const icon = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPjwvc3ZnPg==";
-const icon2 = icon;
-const icon3 = icon;
-const icon4 = icon;
-const icon5 = icon;
-const icon6 = icon;
-const icon7 = icon;
-const image = icon;
-import logoServisin from "./icon/logo_servisin.png";
+import React, { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity, Image, ScrollView, Platform } from "react-native";
+import { router } from "expo-router";
+import { Image as ExpoImage } from "expo-image";
 
-type FormState = {
-  fullName: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  agree: boolean;
-};
+export default function RegisterServisin() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-const initialFormState: FormState = {
-  fullName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-  agree: false,
-};
-
-export const RegisterServisin = (): React.JSX.Element => {
-  const fullNameId = useId();
-  const emailId = useId();
-  const passwordId = useId();
-  const confirmPasswordId = useId();
-  const termsId = useId();
-
-  const [form, setForm] = useState<FormState>(initialFormState);
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleRegister = () => {
+    // Navigate to home after register
+    router.replace("/home");
   };
 
   return (
-    <main className="flex flex-col h-[1404px] items-center relative bg-[#f9f9ff] overflow-x-hidden">
-      <div className="absolute -left-20 bottom-[104px] w-64 h-64 bg-[#003f870d] rounded-full blur-[32px]" />
-      <div className="absolute top-40 -right-20 w-80 h-80 bg-[#8653000d] rounded-full blur-[32px]" />
-      <div className="flex flex-col max-w-md h-[1404px] items-center pt-28 pb-12 px-8 relative w-full">
-        <header className="items-start pt-0 pb-12 px-0 flex flex-col relative self-stretch w-full flex-[0_0_auto]">
-          <div className="items-center gap-[10.8px] flex flex-col relative self-stretch w-full flex-[0_0_auto]">
-            <div className="inline-flex items-start justify-center p-4 relative flex-[0_0_auto] bg-white rounded-3xl border border-solid border-[#f2f3fc]">
-              <div className="absolute w-full h-full top-0 left-0 bg-[#ffffff01] rounded-3xl shadow-[0px_2px_8px_-2px_#003f870a,0px_4px_20px_-2px_#003f8714]" />
-              <img src={logoServisin} alt="Logo" className="relative max-w-[342px] w-20 h-20 rounded-2xl object-cover" />
-            </div>
-            <div className="flex flex-col items-center pt-[21.2px] pb-0 px-0 relative self-stretch w-full flex-[0_0_auto]">
-              <h1 className="relative flex items-center justify-center w-[213.77px] h-9 mt-[-1.00px] [font-family:'Manrope-ExtraBold',Helvetica] font-extrabold text-[#003f87] text-3xl text-center tracking-[-0.75px] leading-9 whitespace-nowrap">
-                Buat Akun Baru
-              </h1>
-            </div>
-            <div className="flex flex-col max-w-60 w-60 items-center relative flex-[0_0_auto]">
-              <p className="relative flex items-center justify-center w-[200px] h-[27px] mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#424752] text-sm text-center tracking-[0] leading-[22.8px] whitespace-nowrap">
-                Selamat datang!
-              </p>
-            </div>
-          </div>
-        </header>
-        <section
-          aria-label="Formulir pendaftaran"
-          className="flex flex-col items-start gap-8 pt-[31px] pb-8 px-8 relative self-stretch w-full flex-[0_0_auto] bg-white rounded-[40px] border border-solid border-[#f2f3fc]"
-        >
-          <form
-            className="pt-0 pb-4 px-0 flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]"
-            onSubmit={handleSubmit}
-          >
-            <div className="gap-6 flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-              <div className="relative self-stretch w-full h-[78.5px]">
-                <label
-                  className="absolute -top-px left-1 w-[97px] h-[17px] flex items-center [font-family:'Manrope-Bold',Helvetica] font-bold text-[#003f87] text-[11px] tracking-[1.10px] leading-[16.5px] whitespace-nowrap"
-                  htmlFor={fullNameId}
-                >
-                  NAMA LENGKAP
-                </label>
-                <div className="flex flex-col w-full items-start absolute top-6 left-0">
-                  <div className="flex items-start justify-center pl-12 pr-4 pt-[17px] pb-[18px] relative self-stretch w-full flex-[0_0_auto] bg-white rounded-2xl overflow-hidden border border-solid border-[#7277841a]">
-                    <input
-                      id={fullNameId}
-                      name="fullName"
-                      type="text"
-                      autoComplete="name"
-                      placeholder="Nama Lengkap"
-                      value={form.fullName}
-                      onChange={(e) =>
-                        setForm((prev) => ({
-                          ...prev,
-                          fullName: e.target.value,
-                        }))
-                      }
-                      className="relative grow border-[none] [background:none] self-stretch mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#424752] placeholder:text-[#c2c6d499] text-sm tracking-[0] leading-[normal] p-0"
-                    />
-                  </div>
-                  <img
-                    className="absolute h-[calc(100%_-_20px)] top-5 left-[19px] w-[13px] pointer-events-none"
-                    alt=""
-                    aria-hidden="true"
-                    src={icon}
-                  />
-                </div>
-              </div>
-              <div className="relative self-stretch w-full h-[78.5px]">
-                <label
-                  className="absolute -top-px left-1 w-[156px] h-[17px] flex items-center [font-family:'Manrope-Bold',Helvetica] font-bold text-[#003f87] text-[11px] tracking-[1.10px] leading-[16.5px] whitespace-nowrap"
-                  htmlFor={emailId}
-                >
-                  EMAIL
-                </label>
-                <div className="flex flex-col w-full items-start absolute top-6 left-0">
-                  <div className="flex items-start justify-center pl-12 pr-4 pt-[17px] pb-[18px] relative self-stretch w-full flex-[0_0_auto] bg-white rounded-2xl overflow-hidden border border-solid border-[#7277841a]">
-                    <input
-                      className="relative grow border-[none] [background:none] self-stretch mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#424752] placeholder:text-[#c2c6d499] text-sm tracking-[0] leading-[normal] p-0"
-                      id={emailId}
-                      name="email"
-                      placeholder="email@contoh.com"
-                      type="email"
-                      autoComplete="email"
-                      inputMode="email"
-                      value={form.email}
-                      onChange={(e) =>
-                        setForm((prev) => ({ ...prev, email: e.target.value }))
-                      }
-                    />
-                  </div>
-                  <img
-                    className="absolute h-[calc(100%_-_20px)] top-5 left-4 w-5 pointer-events-none"
-                    alt=""
-                    aria-hidden="true"
-                    src={image}
-                  />
-                </div>
-              </div>
-              <div className="relative self-stretch w-full h-[78.5px]">
-                <label
-                  className="absolute -top-px left-1 w-[74px] h-[17px] flex items-center [font-family:'Manrope-Bold',Helvetica] font-bold text-[#003f87] text-[11px] tracking-[1.10px] leading-[16.5px] whitespace-nowrap"
-                  htmlFor={passwordId}
-                >
-                  KATA SANDI
-                </label>
-                <div className="flex flex-col w-full items-start absolute top-6 left-0">
-                  <div className="flex items-start justify-center pt-[17px] pb-[18px] pl-12 pr-12 self-stretch w-full flex-[0_0_auto] rounded-2xl overflow-hidden border-[#7277841a] relative bg-white border border-solid">
-                    <input
-                      id={passwordId}
-                      name="password"
-                      type={showPassword ? "text" : "password"}
-                      autoComplete="new-password"
-                      placeholder="Min. 8 karakter"
-                      value={form.password}
-                      onChange={(e) =>
-                        setForm((prev) => ({
-                          ...prev,
-                          password: e.target.value,
-                        }))
-                      }
-                      className="relative grow border-[none] [background:none] self-stretch mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#424752] placeholder:text-[#c2c6d499] text-sm tracking-[0] leading-[normal] p-0"
-                    />
-                  </div>
-                  <img
-                    className="absolute h-[calc(100%_-_18px)] top-[18px] left-[19px] w-[13px] pointer-events-none"
-                    alt=""
-                    aria-hidden="true"
-                    src={icon2}
-                  />
-                  <button
-                    type="button"
-                    aria-label={
-                      showPassword
-                        ? "Sembunyikan kata sandi"
-                        : "Tampilkan kata sandi"
-                    }
-                    aria-pressed={showPassword}
-                    onClick={() => setShowPassword((prev) => !prev)}
-                    className="absolute top-[19px] right-0 inline-flex items-center justify-center w-[18px] h-[calc(100%_-_19px)]"
-                  >
-                    <img
-                      className="w-[18px] h-[calc(100%_-_0px)]"
-                      alt=""
-                      aria-hidden="true"
-                      src={icon3}
-                    />
-                  </button>
-                </div>
-              </div>
-              <div className="relative self-stretch w-full h-[78.5px]">
-                <label
-                  className="absolute -top-px left-1 w-[129px] h-[17px] flex items-center [font-family:'Manrope-Bold',Helvetica] font-bold text-[#003f87] text-[11px] tracking-[1.10px] leading-[16.5px] whitespace-nowrap"
-                  htmlFor={confirmPasswordId}
-                >
-                  ULANGI KATA SANDI
-                </label>
-                <div className="flex flex-col w-full items-start absolute top-6 left-0">
-                  <div className="flex items-start justify-center pt-[17px] pb-[18px] pl-12 pr-12 self-stretch w-full flex-[0_0_auto] rounded-2xl overflow-hidden border-[#7277841a] relative bg-white border border-solid">
-                    <input
-                      id={confirmPasswordId}
-                      name="confirmPassword"
-                      type={showConfirmPassword ? "text" : "password"}
-                      autoComplete="new-password"
-                      placeholder="Min. 8 karakter"
-                      value={form.confirmPassword}
-                      onChange={(e) =>
-                        setForm((prev) => ({
-                          ...prev,
-                          confirmPassword: e.target.value,
-                        }))
-                      }
-                      className="relative grow border-[none] [background:none] self-stretch mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#424752] placeholder:text-[#c2c6d499] text-sm tracking-[0] leading-[normal] p-0"
-                    />
-                  </div>
-                  <img
-                    className="absolute h-[calc(100%_-_18px)] top-[18px] left-[19px] w-[13px] pointer-events-none"
-                    alt=""
-                    aria-hidden="true"
-                    src={icon6}
-                  />
-                  <button
-                    type="button"
-                    aria-label={
-                      showConfirmPassword
-                        ? "Sembunyikan ulangi kata sandi"
-                        : "Tampilkan ulangi kata sandi"
-                    }
-                    aria-pressed={showConfirmPassword}
-                    onClick={() => setShowConfirmPassword((prev) => !prev)}
-                    className="absolute top-[19px] right-0 inline-flex items-center justify-center w-[18px] h-[calc(100%_-_19px)]"
-                  >
-                    <img
-                      className="w-[18px] h-[calc(100%_-_0px)]"
-                      alt=""
-                      aria-hidden="true"
-                      src={icon7}
-                    />
-                  </button>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 pt-1 pb-5 px-1 relative self-stretch w-full flex-[0_0_auto]">
-                <div className="inline-flex flex-col h-[22px] items-start pt-0.5 pb-0 px-0 relative flex-[0_0_auto]">
-                  <div className="inline-flex h-5 items-center relative">
-                    <input
-                      id={termsId}
-                      name="agree"
-                      type="checkbox"
-                      checked={form.agree}
-                      onChange={(e) =>
-                        setForm((prev) => ({
-                          ...prev,
-                          agree: e.target.checked,
-                        }))
-                      }
-                      className="w-5 h-5 rounded-md border-[#c2c6d4] relative bg-white border border-solid checked:bg-[#003f87] checked:border-[#003f87]"
-                    />
-                  </div>
-                </div>
-                <label
-                  htmlFor={termsId}
-                  className="relative w-[286px] h-[39px] mr-[-66.00px] cursor-pointer"
-                >
-                  <span className="absolute top-0 left-0 w-24 h-5 [font-family:'Inter-Regular',Helvetica] font-normal text-[#424752] text-xs tracking-[0] leading-[19.5px] flex items-center whitespace-nowrap">
-                    Saya menyetujui
-                  </span>
-                  <a
-                    href="#"
-                    className="inline-flex items-center justify-center absolute top-0 left-24"
-                  >
-                    <span className="relative justify-center w-[110.88px] h-5 mt-[-1.00px] [font-family:'Inter-SemiBold',Helvetica] font-semibold text-[#003f87] text-xs text-center tracking-[0] leading-[19.5px] flex items-center whitespace-nowrap">
-                      Syarat &amp; Ketentuan
-                    </span>
-                  </a>
-                  <span className="absolute top-0 left-[207px] w-8 h-5 [font-family:'Inter-Regular',Helvetica] font-normal text-[#424752] text-xs tracking-[0] leading-[19.5px] flex items-center whitespace-nowrap">
-                    {" "}
-                    serta
-                  </span>
-                  <a
-                    href="#"
-                    className="inline-flex absolute top-[19px] left-0 items-center justify-center"
-                  >
-                    <span className="relative justify-center w-[99.09px] h-5 mt-[-1.00px] [font-family:'Inter-SemiBold',Helvetica] font-semibold text-[#003f87] text-xs text-center tracking-[0] leading-[19.5px] flex items-center whitespace-nowrap">
-                      Kebijakan Privasi
-                    </span>
-                  </a>
-                  <span className="absolute top-[19px] left-[99px] w-[52px] h-5 [font-family:'Inter-Regular',Helvetica] font-normal text-[#424752] text-xs tracking-[0] leading-[19.5px] flex items-center whitespace-nowrap">
-                    {" "}
-                    Servisin.
-                  </span>
-                </label>
-              </div>
-              <button
-                type="submit"
-                className="flex items-center justify-center gap-[11.99px] px-0 py-4 relative self-stretch w-full flex-[0_0_auto] bg-[#003f87] rounded-2xl"
-              >
-                <div className="absolute w-full h-full top-0 left-0 bg-[#ffffff01] rounded-2xl shadow-[0px_8px_10px_-6px_#003f8733,0px_20px_25px_-5px_#003f8733]" />
-                <span className="relative justify-center w-[141.13px] h-7 mt-[-1.00px] [font-family:'Manrope-Bold',Helvetica] font-bold text-white text-lg text-center tracking-[0] leading-7 flex items-center whitespace-nowrap">
-                  Daftar Sekarang
-                </span>
-                <span className="inline-flex flex-col items-center relative flex-[0_0_auto]">
-                  <img
-                    className="relative w-[13.33px] h-[13.33px]"
-                    alt=""
-                    aria-hidden="true"
-                    src={icon4}
-                  />
-                </span>
-              </button>
-            </div>
-          </form>
-          <div className="flex flex-col items-start px-0 py-2 relative self-stretch w-full flex-[0_0_auto]">
-            <div className="absolute w-[calc(100%_-_235px)] h-[calc(100%_-_32px)] top-4 left-0 border-t [border-top-style:solid] border-[#c2c6d466]" />
-            <div className="absolute w-[calc(100%_-_235px)] h-[calc(100%_-_32px)] top-4 left-[235px] border-t [border-top-style:solid] border-[#c2c6d466]" />
-            <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
-              <div className="relative flex items-center w-[135.11px] h-[17px] mt-[-1.00px] [font-family:'Manrope-Bold',Helvetica] font-bold text-[#727784] text-[10px] tracking-[1.10px] leading-[16.5px] whitespace-nowrap">
-                ATAU DAFTAR DENGAN
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 grid-rows-[52px] h-fit gap-4 self-stretch">
-            <button
-              type="button"
-              className="all-[unset] box-border relative row-[1_/_2] col-[1_/_2] justify-self-center w-full h-fit flex gap-3 pl-[23.73px] pr-[23.74px] py-[15px] bg-white rounded-2xl border border-solid border-[#c2c6d499] items-center justify-center cursor-pointer"
-            >
-              <div className="absolute w-full h-full top-0 left-0 bg-[#ffffff01] rounded-2xl shadow-[0px_2px_8px_-2px_#003f870a,0px_4px_20px_-2px_#003f8714]" />
-              <img
-                className="relative w-[19px] h-[19px] object-cover"
-                alt="Google"
-                src={google}
-              />
-              <div className="inline-flex flex-col items-center relative flex-[0_0_auto]">
-                <div className="relative justify-center w-[48.53px] h-5 mt-[-1.00px] [font-family:'Manrope-Bold',Helvetica] font-bold text-[#191c21] text-sm text-center tracking-[0] leading-5 flex items-center whitespace-nowrap">
-                  Google
-                </div>
-              </div>
-            </button>
-          </div>
-        </section>
-        <footer className="contents">
-          <div className="flex-col pt-12 pb-0 px-0 inline-flex items-start relative flex-[0_0_auto]">
-            <div className="justify-center gap-1 inline-flex items-start relative flex-[0_0_auto]">
-              <p className="relative justify-center w-[133.63px] h-5 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#424752] text-sm text-center tracking-[0] leading-5 flex items-center whitespace-nowrap">
-                Sudah punya akun?
-              </p>
-              <a
-                href="#"
-                className="inline-flex items-center justify-center relative flex-[0_0_auto]"
-              >
-                <span className="relative justify-center w-[45.19px] h-5 mt-[-1.00px] [font-family:'Inter-SemiBold',Helvetica] font-semibold text-[#003f87] text-sm text-center tracking-[0] leading-5 flex items-center whitespace-nowrap">
-                  Masuk
-                </span>
-              </a>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 grid-rows-[55px] w-[147px] h-fit gap-8 pt-16 pb-0 px-0">
-            <div className="relative row-[1_/_2] col-[1_/_2] w-[147px] h-fit flex flex-col items-center justify-center gap-2 bg-white bg-blend-saturation opacity-50">
-              <div className="inline-flex flex-col items-start relative flex-[0_0_auto]">
-                <img
-                  className="relative w-4 h-5"
-                  alt=""
-                  aria-hidden="true"
-                  src={icon5}
-                />
-              </div>
-              <div className="inline-flex flex-col items-start relative flex-[0_0_auto]">
-                <div className="relative w-[109.63px] h-[15px] mt-[-1.00px] [font-family:'Inter-SemiBold',Helvetica] font-semibold text-[#191c21] text-[10px] tracking-[1.00px] leading-[15px] flex items-center whitespace-nowrap">
-                  DATA TERENKRIPSI
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <div className="flex justify-center w-full mt-8 pb-8 z-10 relative">
-          <a href="#" className="text-[#003f87] font-semibold text-sm hover:underline">
-            Open Technician App
-          </a>
-        </div>
-      </div>
-    </main>
-  );
-};
+    <ScrollView contentContainerStyle={{ flexGrow: 1, backgroundColor: "#F8FAFC", alignItems: "center", justifyContent: "center", padding: 24 }}>
+      <View style={{ width: "100%", maxWidth: 400, backgroundColor: "#FFFFFF", padding: 32, borderRadius: 24, shadowColor: "#000", shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.05, shadowRadius: 10, elevation: 4 }}>
+        <View style={{ alignItems: "center", marginBottom: 32 }}>
+          <Image 
+            source={require("./icon/logo_servisin.png")} 
+            style={{ width: 80, height: 80, marginBottom: 16 }} 
+            resizeMode="contain"
+          />
+          <Text style={{ fontSize: 24, fontWeight: "bold", color: "#003F87", marginBottom: 8 }}>Buat Akun</Text>
+          <Text style={{ fontSize: 14, color: "#64748B", textAlign: "center" }}>Daftar untuk menikmati layanan Servisin</Text>
+        </View>
 
-export default RegisterServisin;
+        <View style={{ marginBottom: 16 }}>
+          <Text style={{ fontSize: 12, fontWeight: "bold", color: "#003F87", marginBottom: 8 }}>NAMA LENGKAP</Text>
+          <TextInput
+            placeholder="John Doe"
+            value={name}
+            onChangeText={setName}
+            style={{ backgroundColor: "#F1F5F9", borderRadius: 12, paddingHorizontal: 16, paddingVertical: 14, fontSize: 14, color: "#191C21" }}
+          />
+        </View>
+
+        <View style={{ marginBottom: 16 }}>
+          <Text style={{ fontSize: 12, fontWeight: "bold", color: "#003F87", marginBottom: 8 }}>EMAIL</Text>
+          <TextInput
+            placeholder="user@email.com"
+            value={email}
+            onChangeText={setEmail}
+            autoCapitalize="none"
+            keyboardType="email-address"
+            style={{ backgroundColor: "#F1F5F9", borderRadius: 12, paddingHorizontal: 16, paddingVertical: 14, fontSize: 14, color: "#191C21" }}
+          />
+        </View>
+
+        <View style={{ marginBottom: 24 }}>
+          <Text style={{ fontSize: 12, fontWeight: "bold", color: "#003F87", marginBottom: 8 }}>PASSWORD</Text>
+          <TextInput
+            placeholder="••••••••"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+            style={{ backgroundColor: "#F1F5F9", borderRadius: 12, paddingHorizontal: 16, paddingVertical: 14, fontSize: 14, color: "#191C21" }}
+          />
+        </View>
+
+        <TouchableOpacity 
+          onPress={handleRegister}
+          style={{ backgroundColor: "#003F87", borderRadius: 12, paddingVertical: 16, alignItems: "center", marginBottom: 16 }}
+        >
+          <Text style={{ color: "#FFFFFF", fontSize: 16, fontWeight: "bold" }}>Daftar</Text>
+        </TouchableOpacity>
+
+        <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 16 }}>
+          <View style={{ flex: 1, height: 1, backgroundColor: "#E2E8F0" }} />
+          <Text style={{ paddingHorizontal: 8, color: "#94A3B8", fontSize: 12 }}>Atau daftar dengan</Text>
+          <View style={{ flex: 1, height: 1, backgroundColor: "#E2E8F0" }} />
+        </View>
+
+        <TouchableOpacity 
+          style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: "#FFFFFF", borderWidth: 1, borderColor: "#E2E8F0", borderRadius: 12, paddingVertical: 14, marginBottom: 24 }}
+          onPress={() => alert("Google Login")}
+        >
+          <ExpoImage 
+            source={require("./icon/google.svg")} 
+            style={{ width: 20, height: 20, marginRight: 12 }} 
+            contentFit="contain"
+          />
+          <Text style={{ color: "#191C21", fontSize: 16, fontWeight: "bold" }}>Google</Text>
+        </TouchableOpacity>
+
+        <View style={{ flexDirection: "row", justifyContent: "center", marginBottom: 24 }}>
+          <Text style={{ color: "#64748B", fontSize: 14 }}>Sudah punya akun? </Text>
+          <TouchableOpacity onPress={() => router.push("/login")}>
+            <Text style={{ color: "#003F87", fontSize: 14, fontWeight: "bold" }}>Masuk</Text>
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity 
+          style={{ backgroundColor: "#F1F5F9", borderRadius: 12, paddingVertical: 14, alignItems: "center" }}
+          onPress={() => router.push("/technician/login")}
+        >
+          <Text style={{ color: "#475569", fontSize: 14, fontWeight: "bold" }}>Masuk mode teknisi</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
+  );
+}
