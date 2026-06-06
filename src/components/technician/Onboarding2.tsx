@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, ScrollView, SafeAreaView, Switch } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, Switch } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
 export default function Onboarding2() {
+  const insets = useSafeAreaInsets();
   const [ownToolset, setOwnToolset] = useState(false);
   const [selectedSkills, setSelectedSkills] = useState<string[]>(["AC Repair"]);
 
@@ -19,7 +21,7 @@ export default function Onboarding2() {
   ];
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#F9F9FC" }}>
+    <View style={{ flex: 1, backgroundColor: "#F9F9FC", paddingTop: insets.top }}>
       {/* Top Header */}
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", padding: 24, backgroundColor: "#F9F9FC" }}>
         <Text style={{ fontSize: 18, fontWeight: "bold", color: "#1A1C1E" }}>Onboarding</Text>
@@ -122,7 +124,7 @@ export default function Onboarding2() {
       </ScrollView>
 
       {/* Bottom Sticky Action */}
-      <View style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: 24, backgroundColor: "rgba(255, 255, 255, 0.9)", flexDirection: "row", gap: 16 }}>
+      <View style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: 24, paddingBottom: Math.max(insets.bottom, 24), backgroundColor: "rgba(255, 255, 255, 0.9)", flexDirection: "row", gap: 16 }}>
         <TouchableOpacity 
           onPress={() => router.back()}
           style={{ flex: 1, backgroundColor: "#E8E8EA", borderRadius: 8, paddingVertical: 16, alignItems: "center" }}
@@ -136,6 +138,6 @@ export default function Onboarding2() {
           <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>Next Step</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
