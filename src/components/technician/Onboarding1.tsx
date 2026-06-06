@@ -1,10 +1,12 @@
 import React from "react";
-import { View, Text, TouchableOpacity, ScrollView, SafeAreaView } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
 export default function Onboarding1() {
+  const insets = useSafeAreaInsets();
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#F9F9FC" }}>
+    <View style={{ flex: 1, backgroundColor: "#F9F9FC", paddingTop: insets.top }}>
       <ScrollView contentContainerStyle={{ padding: 24, paddingBottom: 120 }}>
         
         <View style={{ marginBottom: 40 }}>
@@ -65,7 +67,7 @@ export default function Onboarding1() {
       </ScrollView>
 
       {/* Bottom Sticky Action */}
-      <View style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: 24, backgroundColor: "rgba(249, 249, 252, 0.9)" }}>
+      <View style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: 24, paddingBottom: Math.max(insets.bottom, 24), backgroundColor: "rgba(249, 249, 252, 0.9)" }}>
         <TouchableOpacity 
           onPress={() => router.push("/technician/onboarding-2")}
           style={{ backgroundColor: "#003F87", borderRadius: 12, paddingVertical: 16, alignItems: "center", shadowColor: "#000", shadowOpacity: 0.1, shadowRadius: 10, elevation: 4 }}
@@ -73,6 +75,6 @@ export default function Onboarding1() {
           <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>Next Step</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
