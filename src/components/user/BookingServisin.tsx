@@ -377,7 +377,7 @@ export const BookingServisin = (props: any) => {
                             fontWeight: "bold",
                           }}
                         >
-                          {"Contact Technician"}
+                          {"Contact"}
                         </Text>
                       </LinearGradient>
                     </TouchableOpacity>
