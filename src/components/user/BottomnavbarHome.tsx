@@ -36,10 +36,13 @@ const navItems = [
   },
 ];
 
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 export const BottomnavbarHome = (): React.JSX.Element => {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   return (
-    <View style={{ flexDirection: 'row', width: '100%', height: 80, backgroundColor: '#f8fafce6', borderTopLeftRadius: 24, borderTopRightRadius: 24, borderTopWidth: 1, borderTopColor: '#e2e8f033', shadowColor: '#000', shadowOffset: { width: 0, height: -4 }, shadowOpacity: 0.05, shadowRadius: 20, elevation: 10, alignItems: 'center', justifyContent: 'space-around', paddingHorizontal: 8 }}>
+    <View style={{ flexDirection: 'row', width: '100%', height: 72, backgroundColor: '#FFFFFF', alignItems: 'center', justifyContent: 'space-around', paddingHorizontal: 8 }}>
       {navItems.map((item) => (
         <TouchableOpacity
           key={item.label}
