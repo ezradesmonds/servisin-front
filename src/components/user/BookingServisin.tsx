@@ -9,7 +9,7 @@ export const BookingServisin = (props: any) => {
   const [activeTab, setActiveTab] = useState<"ongoing" | "completed">("ongoing");
 
   return (
-    <SafeAreaView
+    <View
       style={{
         flex: 1,
         backgroundColor: "#F8FAFC",
@@ -318,48 +318,70 @@ export const BookingServisin = (props: any) => {
                       </View>
                     </View>
                   </View>
-                  <TouchableOpacity
-                    style={{
-                      borderRadius: 12,
-                      marginTop: 24,
-                    }}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <LinearGradient
-                      start={{ x: 0, y: 0 }}
-                      end={{ x: 0, y: 1 }}
-                      colors={["#003F87", "#0056B3"]}
+                  <View style={{ flexDirection: "row", alignItems: "center", paddingTop: 24 }}>
+                    <TouchableOpacity
                       style={{
-                        flexDirection: "row",
-                        justifyContent: "center",
+                        flex: 1,
                         alignItems: "center",
+                        backgroundColor: "#E1E2EA",
                         borderRadius: 12,
                         paddingVertical: 14,
+                        marginRight: 12,
                       }}
+                      onPress={() => router.push('/transaction-detail')}
                     >
-                      <Image
-                        source={{
-                          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/9ngszjf8_expires_30_days.png",
-                        }}
-                        resizeMode={"stretch"}
-                        style={{
-                          borderRadius: 12,
-                          width: 15,
-                          height: 15,
-                          marginRight: 8,
-                        }}
-                      />
                       <Text
                         style={{
-                          color: "#FFFFFF",
+                          color: "#191C21",
                           fontSize: 14,
                           fontWeight: "bold",
                         }}
                       >
-                        {"Contact Technician"}
+                        {"View Details"}
                       </Text>
-                    </LinearGradient>
-                  </TouchableOpacity>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                      style={{
+                        flex: 1,
+                      }}
+                      onPress={() => alert("Contact!")}
+                    >
+                      <LinearGradient
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 0, y: 1 }}
+                        colors={["#003F87", "#0056B3"]}
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: 12,
+                          paddingVertical: 14,
+                        }}
+                      >
+                        <Image
+                          source={{
+                            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/9ngszjf8_expires_30_days.png",
+                          }}
+                          resizeMode={"stretch"}
+                          style={{
+                            borderRadius: 12,
+                            width: 15,
+                            height: 15,
+                            marginRight: 8,
+                          }}
+                        />
+                        <Text
+                          style={{
+                            color: "#FFFFFF",
+                            fontSize: 14,
+                            fontWeight: "bold",
+                          }}
+                        >
+                          {"Contact Technician"}
+                        </Text>
+                      </LinearGradient>
+                    </TouchableOpacity>
+                  </View>
                 </View>
               </View>
 
@@ -551,6 +573,27 @@ export const BookingServisin = (props: any) => {
                       paddingTop: 24,
                     }}
                   >
+                    <TouchableOpacity
+                      style={{
+                        flex: 1,
+                        alignItems: "center",
+                        backgroundColor: "#E1E2EA",
+                        borderRadius: 12,
+                        paddingVertical: 14,
+                        marginRight: 12,
+                      }}
+                      onPress={() => router.push('/transaction-detail')}
+                    >
+                      <Text
+                        style={{
+                          color: "#191C21",
+                          fontSize: 14,
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {"View Details"}
+                      </Text>
+                    </TouchableOpacity>
                     <TouchableOpacity
                       style={{
                         flex: 1,
@@ -1083,7 +1126,7 @@ export const BookingServisin = (props: any) => {
                     style={{
                       flex: 1,
                     }}
-                    onPress={() => alert("Pressed!")}
+                    onPress={() => router.push('/make-review')}
                   >
                     <LinearGradient
                       start={{ x: 0, y: 0 }}
@@ -1333,7 +1376,7 @@ export const BookingServisin = (props: any) => {
                       paddingVertical: 14,
                       marginRight: 12,
                     }}
-                    onPress={() => alert("Pressed!")}
+                    onPress={() => router.push('/transaction-detail')}
                   >
                     <Text
                       style={{
@@ -1349,7 +1392,7 @@ export const BookingServisin = (props: any) => {
                     style={{
                       flex: 1,
                     }}
-                    onPress={() => alert("Pressed!")}
+                    onPress={() => router.push('/make-review')}
                   >
                     <LinearGradient
                       start={{ x: 0, y: 0 }}
@@ -1395,7 +1438,7 @@ export const BookingServisin = (props: any) => {
 
         
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

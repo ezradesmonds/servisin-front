@@ -7,7 +7,7 @@ import { router } from "expo-router";
 
 export const ProfileServisin = (props: any) => {
   return (
-    <SafeAreaView
+    <View
       style={{
         flex: 1,
         backgroundColor: "#F8FAFC",
@@ -185,7 +185,7 @@ export const ProfileServisin = (props: any) => {
                 shadowRadius: 4,
                 elevation: 2,
               }}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.push("/my-address")}
             >
               <Image
                 source={{
@@ -500,7 +500,7 @@ export const ProfileServisin = (props: any) => {
                 padding: 16,
                 marginBottom: 12,
               }}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.push("/help-center")}
             >
               <Image
                 source={{
@@ -550,7 +550,7 @@ export const ProfileServisin = (props: any) => {
                 padding: 16,
                 marginBottom: 12,
               }}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.push("/terms-conditions")}
             >
               <Image
                 source={{
@@ -599,7 +599,7 @@ export const ProfileServisin = (props: any) => {
                 borderRadius: 12,
                 padding: 16,
               }}
-              onPress={() => alert("Logout pressed!")}
+              onPress={() => router.push('/login')}
             >
               <Image
                 source={{
@@ -697,7 +697,7 @@ export const ProfileServisin = (props: any) => {
 
         
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

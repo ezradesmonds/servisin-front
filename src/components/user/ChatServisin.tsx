@@ -1,15 +1,16 @@
 import React from "react";
-import { View, ScrollView, Text, Image, ImageBackground } from "react-native";
+import { View, ScrollView, Text, Image, ImageBackground, TouchableOpacity } from "react-native";
+import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
 
 export const ChatServisin = (props: any) => {
   return (
-    <SafeAreaView
+    <View
       style={{
         flex: 1,
-        backgroundColor: "#F8FAFC",
+        backgroundColor: "#FFFFFF",
         alignItems: "center",
       }}
     >
@@ -209,7 +210,8 @@ export const ChatServisin = (props: any) => {
               marginBottom: 48,
             }}
           >
-            <View
+            <TouchableOpacity
+              onPress={() => router.push('/chat-room')}
               style={{
                 flexDirection: "row",
                 alignItems: "center",
@@ -388,8 +390,9 @@ export const ChatServisin = (props: any) => {
                   </View>
                 </View>
               </View>
-            </View>
-            <View
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => router.push('/chat-room')}
               style={{
                 flexDirection: "row",
                 alignItems: "center",
@@ -503,8 +506,9 @@ export const ChatServisin = (props: any) => {
                   />
                 </View>
               </View>
-            </View>
-            <View
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => router.push('/chat-room')}
               style={{
                 flexDirection: "row",
                 alignItems: "center",
@@ -635,7 +639,7 @@ export const ChatServisin = (props: any) => {
                   </View>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
             <View
               style={{
                 alignItems: "center",
@@ -674,7 +678,7 @@ export const ChatServisin = (props: any) => {
 
         
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

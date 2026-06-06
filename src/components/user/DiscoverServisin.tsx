@@ -3,11 +3,9 @@ import { View, ScrollView, Image, Text, TouchableOpacity, ImageBackground } from
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from 'expo-router';
 
-
-
 export const DiscoverServisin = (props: any) => {
   return (
-    <SafeAreaView
+    <View
       style={{
         flex: 1,
         backgroundColor: "#F8FAFC",
@@ -625,300 +623,46 @@ export const DiscoverServisin = (props: any) => {
             </View>
           </ScrollView>
           
-          <View
-            style={{
-              paddingTop: 8,
-              marginBottom: 24,
-              paddingHorizontal: 24,
-            }}
-          >
-            <View
-              style={{
-                marginBottom: 23,
-              }}
-            >
-              <Text
-                style={{
-                  color: "#191C21",
-                  fontSize: 18,
-                  fontWeight: "bold",
-                }}
-              >
-                {"Explore Nearby"}
+          <View style={{ paddingTop: 8, marginBottom: 24, paddingHorizontal: 24, gap: 16 }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+              <Text style={{ color: '#191c21', fontSize: 18, fontWeight: 'bold' }}>
+                Eksplorasi
               </Text>
+              <TouchableOpacity>
+                <Text style={{ color: '#003f87', fontSize: 12, fontWeight: 'bold' }}>
+                  See All
+                </Text>
+              </TouchableOpacity>
             </View>
-            <View>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "flex-start",
-                  marginBottom: 24,
-                }}
-              >
-                <View
-                  style={{
-                    marginRight: 16,
-                  }}
-                >
-                  <Image
-                    source={{
-                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/cwx10spo_expires_30_days.png",
-                    }}
-                    resizeMode={"cover"}
-                    style={{
-                      width: 80,
-                      height: 80,
-                      borderRadius: 12,
-                      marginBottom: 5,
-                    }}
-                  />
-                </View>
-                <View
-                  style={{
-                    flex: 1,
-                    borderBottomWidth: 1,
-                    borderBottomColor: "#F2F3FC",
-                    paddingBottom: 17,
-                  }}
-                >
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      marginBottom: 4,
-                    }}
-                  >
-                    <View style={{ flex: 1 }}>
-                      <Text
-                        style={{
-                          color: "#191C21",
-                          fontSize: 16,
-                          fontWeight: "bold",
-                          marginBottom: 4,
-                        }}
-                      >
-                        {"Kevin Pratama"}
-                      </Text>
-                      <View
-                        style={{
-                          flexDirection: "row",
-                          alignItems: "center",
-                        }}
-                      >
-                        <View
-                          style={{
-                            backgroundColor: "#004C241A",
-                            borderRadius: 9999,
-                            paddingVertical: 4,
-                            paddingHorizontal: 8,
-                            marginRight: 8,
-                          }}
-                        >
-                          <Text
-                            style={{
-                              color: "#004C24",
-                              fontSize: 10,
-                              fontWeight: "bold",
-                            }}
-                          >
-                            {"Verified Pro"}
-                          </Text>
-                        </View>
-                        <View
-                          style={{
-                            backgroundColor: "#8653001A",
-                            borderRadius: 9999,
-                            paddingVertical: 4,
-                            paddingHorizontal: 8,
-                          }}
-                        >
-                          <Text
-                            style={{
-                              color: "#865300",
-                              fontSize: 10,
-                              fontWeight: "bold",
-                            }}
-                          >
-                            {"Quick Response"}
-                          </Text>
-                        </View>
-                      </View>
+            <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+              {[1, 2, 3, 4].map((item, index) => (
+                <View key={index} style={{ width: '48%', backgroundColor: '#FFFFFF', borderRadius: 16, padding: 12, marginBottom: 16, shadowColor: '#000000', shadowOpacity: 0.05, shadowOffset: { width: 0, height: 1 }, shadowRadius: 2, elevation: 2, borderWidth: 1, borderColor: '#c2c6d41a' }}>
+                  <View style={{ width: '100%', height: 104, borderRadius: 12, backgroundColor: '#ccc', marginBottom: 10, overflow: 'hidden' }}>
+                    <Image source={{ uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/2231x2kh_expires_30_days.png" }} style={{ width: '100%', height: '100%' }} contentFit="cover" />
+                    <View style={{ position: 'absolute', bottom: 8, left: 8, backgroundColor: 'rgba(255,255,255,0.9)', flexDirection: 'row', alignItems: 'center', paddingHorizontal: 8, paddingVertical: 2, borderRadius: 8 }}>
+                      <Text style={{ fontSize: 10, fontWeight: 'bold', color: '#191c21' }}>⭐ 4.9</Text>
                     </View>
-                    <Text
-                      style={{
-                        color: "#424752",
-                        fontSize: 12,
-                      }}
-                    >
-                      {"0.8 km"}
-                    </Text>
                   </View>
-                  <Text
-                    style={{
-                      color: "#424752",
-                      fontSize: 12,
-                      marginBottom: 8,
-                      marginTop: 4,
-                    }}
-                  >
-                    {"Specialized in Smart Home & TV repairs..."}
-                  </Text>
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Text
-                      style={{
-                        color: "#191C21",
-                        fontSize: 12,
-                        fontWeight: "bold",
-                        marginRight: 16,
-                      }}
-                    >
-                      {"⭐ 4.9"}
-                    </Text>
-                    <Text
-                      style={{
-                        color: "#424752",
-                        fontSize: 12,
-                      }}
-                    >
-                      {"🟢 Available Now"}
-                    </Text>
-                  </View>
-                </View>
-              </View>
-              
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "flex-start",
-                }}
-              >
-                <View
-                  style={{
-                    marginRight: 16,
-                  }}
-                >
-                  <Image
-                    source={{
-                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/JwKgeNiNXT/wensg4b4_expires_30_days.png",
-                    }}
-                    resizeMode={"cover"}
-                    style={{
-                      width: 80,
-                      height: 80,
-                      borderRadius: 12,
-                      marginBottom: 5,
-                    }}
-                  />
-                </View>
-                <View
-                  style={{
-                    flex: 1,
-                    paddingBottom: 17,
-                  }}
-                >
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      marginBottom: 4,
-                    }}
-                  >
-                    <View style={{ flex: 1 }}>
-                      <Text
-                        style={{
-                          color: "#191C21",
-                          fontSize: 16,
-                          fontWeight: "bold",
-                          marginBottom: 4,
-                        }}
-                      >
-                        {"Linda Wijaya"}
-                      </Text>
-                      <View
-                        style={{
-                          flexDirection: "row",
-                          alignItems: "center",
-                        }}
-                      >
-                        <View
-                          style={{
-                            backgroundColor: "#004C241A",
-                            borderRadius: 9999,
-                            paddingVertical: 4,
-                            paddingHorizontal: 8,
-                            marginRight: 8,
-                          }}
-                        >
-                          <Text
-                            style={{
-                              color: "#004C24",
-                              fontSize: 10,
-                              fontWeight: "bold",
-                            }}
-                          >
-                            {"Verified Pro"}
-                          </Text>
-                        </View>
-                      </View>
+                  <Text style={{ fontSize: 14, fontWeight: 'bold', color: '#191c21', marginBottom: 2 }}>Aria Santoso</Text>
+                  <Text style={{ fontSize: 10, color: '#424752', marginBottom: 8 }}>Washing Machine Specialist</Text>
+                  <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
+                      <Text style={{ fontSize: 12, fontWeight: 'bold', color: '#865300' }}>IDR 150k</Text>
+                      <Text style={{ fontSize: 8, color: '#424752' }}>/hr</Text>
                     </View>
-                    <Text
-                      style={{
-                        color: "#424752",
-                        fontSize: 12,
-                      }}
-                    >
-                      {"1.5 km"}
-                    </Text>
-                  </View>
-                  <Text
-                    style={{
-                      color: "#424752",
-                      fontSize: 12,
-                      marginBottom: 8,
-                      marginTop: 4,
-                    }}
-                  >
-                    {"Deep cleaning and disinfection services…"}
-                  </Text>
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Text
-                      style={{
-                        color: "#191C21",
-                        fontSize: 12,
-                        fontWeight: "bold",
-                        marginRight: 16,
-                      }}
-                    >
-                      {"⭐ 4.7"}
-                    </Text>
-                    <Text
-                      style={{
-                        color: "#424752",
-                        fontSize: 12,
-                      }}
-                    >
-                      {"🕒 Next: 2 PM"}
-                    </Text>
+                    <View style={{ backgroundColor: '#61de8a33', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 }}>
+                      <Text style={{ fontSize: 10, fontWeight: 'bold', color: '#004C24' }}>→</Text>
+                    </View>
                   </View>
                 </View>
-              </View>
+              ))}
             </View>
           </View>
         </ScrollView>
 
         
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

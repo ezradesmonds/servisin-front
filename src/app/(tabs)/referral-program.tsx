@@ -10,7 +10,7 @@ const SvgIcon = ({ size = 20, color = "#000" }) => (
 
 export default function ReferralProgram() {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#f9f9ff" }}>
+    <View style={{ flex: 1, backgroundColor: "#f9f9ff" }}>
       <ScrollView
         style={{ flex: 1 }}
         contentContainerStyle={{ paddingHorizontal: 16, paddingTop: 24, paddingBottom: 128, gap: 32 }}
@@ -134,6 +134,6 @@ export default function ReferralProgram() {
         </View>
 
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
