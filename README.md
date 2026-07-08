@@ -1,56 +1,84 @@
-# Welcome to your Expo app 👋
+# Servisin Frontend
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Servisin Frontend is an Expo and React Native app for an on-demand home service marketplace. It includes customer flows, technician flows, booking, payments, chat, profiles, referrals, and subscription screens.
 
-## Get started
+## Overview
 
-1. Install dependencies
+The app is structured as a mobile-first service marketplace. Customers can discover services, create bookings, complete payment flows, chat, manage addresses, and track service history. Technicians have separate onboarding, order, calendar, wallet, profile, and job-detail workflows.
 
-   ```bash
-   npm install
-   ```
+## Key Features
 
-2. Start the app
+- Customer login and registration.
+- Home, discover, all-services, and service-detail screens.
+- Booking confirmation and payment/finish-payment flows.
+- Booking history and transaction detail screens.
+- Chat list and chat room screens.
+- Customer profile, profile editing, addresses, notifications, reviews, help, and terms pages.
+- Referral and subscription screens.
+- Technician login, registration, onboarding, and service-area setup.
+- Technician dashboard, orders, calendar, wallet, bank account, profile, job detail, chat, and notification flows.
+- Environment-based API base URL configuration.
 
-   ```bash
-   npx expo start
-   ```
+## Tech Stack
 
-In the output, you'll find options to open the app in a
+- Expo 54
+- React Native 0.81
+- React 19
+- Expo Router 6
+- TypeScript
+- Zustand
+- Axios
+- Expo modules for image, haptics, status bar, web browser, secure storage, and more
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Project Structure
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+app/                    Expo Router screens and route groups
+src/                    Shared source code
+src/constants/Config.ts API base URL configuration
+assets/                 Images, icons, and fonts
+components/             Shared UI components
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting Started
 
-### Other setup steps
+```bash
+npm install
+npx expo start
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Run on a target platform:
 
-## Learn more
+```bash
+npm run android
+npm run ios
+npm run web
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Configure the backend API URL:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```env
+EXPO_PUBLIC_API_URL=http://localhost:8000/api
+```
 
-## Join the community
+If this value is not provided, the app falls back to the configured production API URL in `src/constants/Config.ts`.
 
-Join our community of developers creating universal apps.
+## Backend Dependency
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The app expects the Servisin Laravel backend API to provide authentication, services, bookings, payments, chat, technician, and admin-related endpoints.
+
+## Security Notes
+
+- Store real tokens with secure storage and never hard-code production credentials.
+- Validate all booking, payment, and technician state transitions on the backend.
+- Treat client-side role checks as UI convenience only. Authorization must be enforced server-side.
+
+## Suggested Tests
+
+- E2E smoke tests for customer booking and technician order acceptance.
+- API contract tests between mobile app expectations and backend responses.
+- Offline/error-state tests for booking, payment, and chat screens.
+
+## Status
+
+Mobile frontend for a service marketplace prototype.
